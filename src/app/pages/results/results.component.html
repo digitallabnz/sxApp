@@ -1,0 +1,24 @@
+<mat-grid-list cols={{breakpoint}} rowHeight="2:1" (window:resize)="onResize($event)">
+    
+  <mat-grid-tile *ngFor="let item of members;" >..
+            <mat-card class="example-card" style="width:90%">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{item?.firstName}}</mat-card-title>
+                <mat-card-subtitle>{{item?.memberCardNumber}}</mat-card-subtitle>
+              </mat-card-header>
+           
+              <mat-card-content>
+                <li>Name : {{item?.firstName}} {{item?.lastName}}</li>
+                <li>DoB : {{item?.dataOfBirth}} </li>
+                <li>Member no : {{item?.memberCardNumber}} </li>
+                <li>Policy No : {{item?.policyNumber}} </li>
+
+              </mat-card-content>
+           
+            </mat-card>
+
+  </mat-grid-tile>
+
+  
+</mat-grid-list>

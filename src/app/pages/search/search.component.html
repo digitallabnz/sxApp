@@ -1,0 +1,67 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
+  <div class="form-group">
+    <label for="calander">Service Date</label>
+    <div class="form-control">
+      
+      <input matInput [matDatepicker]="picker" style="border: none; width: 80%;" formControlName="serviceDateCtr">
+      <mat-datepicker-toggle matSuffix [for]="picker" style="float: right;"></mat-datepicker-toggle>
+      <mat-datepicker #picker ></mat-datepicker>
+    </div>
+    <div *ngIf="searchForm.controls['serviceDateCtr'].invalid && (searchForm.controls['serviceDateCtr'].dirty || searchForm.controls['serviceDateCtr'].touched)" class="alert">
+        <div *ngIf="searchForm.controls['serviceDateCtr'].errors.required" style="color: red; font-size: smaller;">
+                * Please enter Service Date
+      </div>
+    </div>
+    
+  </div>
+  <div class="form-group">
+    
+    <label for="exampleInputEmail1">Policy Number</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Policy Number"  formControlName="policyNoCtr">
+    <div *ngIf="searchForm.controls['policyNoCtr'].invalid && (searchForm.controls['policyNoCtr'].dirty || searchForm.controls['policyNoCtr'].touched)" class="alert">
+        <div *ngIf="searchForm.controls['policyNoCtr'].errors.required" style="color: red; font-size: smaller;">
+                * Please enter Policy Number
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Member Card Number</label>
+    <input type="text"  class="form-control" id="exampleInputPassword1" placeholder="Member Card Numbe"  formControlName="memberNoCtr">
+  </div>
+  
+  <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Submit</button>
+</form>
+
+<!--<div class="container">
+  
+                      <form [formGroup]="filterForm">
+                            <mat-grid-list cols={{breakpoint}} rowHeight="2:1" (window:resize)="onResize($event)">
+                        
+                               <mat-grid-tile>
+                                            <label for="inputPassword2" class="label col-sm-2 col-form-label filterlabel" >Date Range</label>
+                                            <div class="col-sm-4">
+                                            
+                                                
+                                                <input matInput [matDatepicker]="picker">
+                                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker></mat-datepicker>
+                                                          
+                                            </div>   
+                                </mat-grid-tile>                               
+                                <mat-grid-tile>
+                                          <label for="inputPassword2" class="label col-sm-2 col-form-label filterlabel" >Status</label>
+                                          <div >
+                                            <input 
+                                           style="height: 37px; width: 100%;margin-bottom: 12px; margin-top: 12px;" name='date1'>
+                                          </div>
+                                </mat-grid-tile>  
+                              </mat-grid-list>
+                                      <div class="form-group row" >
+                                          <div class="offset-md-6 col-md-6 offset-lg-8 col-lg-4" style="text-align: right; display: block; margin-top:35px; margin-bottom: 5px;">
+                                              <button type="submit" nbButton status="primary" class="pnlbtns" (click) ="clearFilters()">Clear</button>
+                                              <button type="submit" nbButton status="primary" class="pnlbtns" (click) ="applyFilters(marksearch.value)">Apply</button>
+                                          </div>
+                                      </div>
+                          
+                      </form>
+</div>-->
