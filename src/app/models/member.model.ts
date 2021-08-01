@@ -4,7 +4,5 @@ export interface Member {
     memberCardNumber: string;
     policyNumber: string;
     dataOfBirth: string;
-
-
-  }
+}
   

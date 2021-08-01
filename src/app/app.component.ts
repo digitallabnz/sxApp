@@ -10,7 +10,7 @@ import { MatSidenav } from '@angular/material';
 export class AppComponent {
   title = 'SxApp';
   @ViewChild(MatSidenav)
- sidenav!: MatSidenav;
+  sidenav!: MatSidenav;
 
   constructor(private observer: BreakpointObserver) {}
   
@@ -25,6 +25,4 @@ export class AppComponent {
       }
     });
   }
-
-
 }

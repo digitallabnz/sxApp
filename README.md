@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.10.
 
+## First time use
+
+1. Clone the repo to your local directory.
+2. Run `ng install` to download all the required libraries and support files.
+3. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
+
+## Cloud hosted demo
+
+Use `https://sxapp-2707b.web.app/` url to see the cloud hosted application.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MemberSearchService } from 'src/app/services/member-search.service';
 import { MemberStoreService } from 'src/app/services/member-store.service';
 
 @Component({
@@ -8,30 +7,19 @@ import { MemberStoreService } from 'src/app/services/member-store.service';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-
   tiles: any;
   breakpoint: any;
   members: any;
+  membersTrackFn = (i, member) => member.id;
 
-  todosTrackFn = (i, member) => member.id;
+  constructor( private memberStoreService: MemberStoreService) {} 
 
-
-  constructor( private memberStoreService: MemberStoreService) { 
-
-    console.log(memberStoreService);
-    this.getMemberList()
-  }
-  
-  
-
-  ngOnInit() {
-    
+  ngOnInit() {    
     this.changeGridResolution(window.innerWidth);
   }
 
   onResize(event) {
-    this.changeGridResolution(event.target.innerWidth);
-    
+    this.changeGridResolution(event.target.innerWidth);    
   }
 
   changeGridResolution(windowSize){
@@ -48,11 +36,4 @@ export class ResultsComponent implements OnInit {
       this.breakpoint = 4;
     }
   }
-
-  getMemberList(){
-    //this.memberSearchService.getMembers('').subscribe((data)=>{
-   //    this.members = data;
-   // });
-  }
-
 }

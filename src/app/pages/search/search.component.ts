@@ -9,6 +9,7 @@ import { MemberStoreService } from 'src/app/services/member-store.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  headingCaption = 'Memeber Search';
   tiles: any;
   breakpoint: any;
   numberRegex = /^(0|[1-9][0-9]*)$/

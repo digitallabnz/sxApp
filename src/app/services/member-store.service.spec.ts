@@ -14,17 +14,11 @@ describe('MemberStoreService', () => {
         HttpClientModule
       ],
     });
-    store = new MemberStoreService(service);
-    
-  
+    store = new MemberStoreService(service);  
   });
 
   it('should be created', () => {
     const service: MemberStoreService = TestBed.get(MemberStoreService);
     expect(service).toBeTruthy();
   });
-
-
- 
-
 });
