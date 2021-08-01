@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberSearchService } from 'src/app/services/member-search.service';
+import { MemberStoreService } from 'src/app/services/member-store.service';
 
 @Component({
   selector: 'app-results',
@@ -11,9 +12,13 @@ export class ResultsComponent implements OnInit {
   tiles: any;
   breakpoint: any;
   members: any;
-  constructor( private memberSearchService: MemberSearchService) { 
 
-    this.tiles= [{"cols": '1111111', "rows": 'opopdidpsdp', "border": '9080707'},{"cols": '1111111', "rows": 'opopdidpsdp', "border": '9080707'}]
+  todosTrackFn = (i, member) => member.id;
+
+
+  constructor( private memberStoreService: MemberStoreService) { 
+
+    console.log(memberStoreService);
     this.getMemberList()
   }
   
@@ -45,9 +50,9 @@ export class ResultsComponent implements OnInit {
   }
 
   getMemberList(){
-    this.memberSearchService.getMembers('').subscribe((data)=>{
-       this.members = data;
-    });
+    //this.memberSearchService.getMembers('').subscribe((data)=>{
+   //    this.members = data;
+   // });
   }
 
 }
